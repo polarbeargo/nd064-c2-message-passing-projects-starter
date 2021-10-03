@@ -25,7 +25,7 @@ def write_to_db(location):
         .format(user_id, latitude, longitude)
 
     print(table_insert)
-    conn.execute(table_insert)
+    cur.execute(table_insert)
 
 
 for topic in consumer:
