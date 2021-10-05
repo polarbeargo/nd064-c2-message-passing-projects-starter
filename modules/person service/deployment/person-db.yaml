@@ -79,8 +79,8 @@ spec:
                 key: DB_NAME
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: person-db
+              name: db-person
       volumes:
-        - name: person-db
+        - name: db-person
           persistentVolumeClaim:
             claimName: postgres-person-pv-claim
