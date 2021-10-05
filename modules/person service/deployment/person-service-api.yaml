@@ -19,7 +19,7 @@ kind: Deployment
 metadata:
   labels:
     service: person-api
-  name: person-api
+  name: person-deployment-api
 spec:
   replicas: 1
   selector:
@@ -31,14 +31,14 @@ spec:
         service: person-api
     spec:
       containers:
-      - image: polarbeargo/person-api:latest
+      - image: polarbeargo/person-service-api:latest
         name: person-service-api
         imagePullPolicy: Always
         env:
         - name: DB_USERNAME
           valueFrom:
             configMapKeyRef:
-              name: db-person-map
+              name: db-person
               key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
@@ -48,16 +48,16 @@ spec:
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name: db-person-map
+              name: db-person
               key: DB_NAME
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
-              name: db-person-map
+              name: db-person
               key: DB_HOST
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:
-              name: db-person-map
+              name: db-person
               key: DB_PORT
       restartPolicy: Always
