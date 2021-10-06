@@ -31,7 +31,7 @@ spec:
         service: person-api
     spec:
       containers:
-      - image: polarbeargo/person-service-api:latest
+      - image: catzzzlol/person-service-api:latest
         name: person-service-api
         imagePullPolicy: Always
         env:

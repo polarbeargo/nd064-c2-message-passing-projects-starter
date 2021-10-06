@@ -31,7 +31,7 @@ spec:
         service: udaconnect-app
     spec:
       containers:
-      - image: polarbeargo/fronend-service-api:latest
+      - image: catzzzlol/fronend-service-api:latest
         name: udaconnect-app
         imagePullPolicy: Always
         resources:

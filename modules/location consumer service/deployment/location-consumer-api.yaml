@@ -31,7 +31,7 @@ spec:
         service: location-consumer-api
     spec:
       containers:
-      - image: polarbeargo/location-consumer-api:latest
+      - image: catzzzlol/location-consumer-api:latest
         name: location-consumer-api-container
         imagePullPolicy: Always
         env:
