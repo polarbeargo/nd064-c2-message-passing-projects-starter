@@ -1,10 +1,8 @@
 import logging
-from datetime import datetime, timedelta
 from typing import Dict, List
 
 from app import db
 from app.udaconnect.models import Person
-from app.udaconnect.schemas import PersonSchema
 
 from sqlalchemy.sql import text
 
