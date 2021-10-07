@@ -16,7 +16,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0blocation_event.proto\"\x94\x02\n\x0clocation_eventMessage\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncreated_by\x18\x02 \x01(\t\x12$\n\x06status\x18\x03 \x01(\x0e\x32\x14.location_eventMessage.Status\x12\x12\n\ncreated_at\x18\x04 \x01(\t\x12*\n\tequipment\x18\x05 \x03(\x0e\x32\x17.location_eventMessage.Equipment\"?\n\x06Status\x12\n\n\x06QUEUED\x10\x00\x12\x0e\n\nPROCESSING\x10\x01\x12\r\n\tCOMPLETED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\"=\n\tEquipment\x12\x0c\n\x08KEYBOARD\x10\x00\x12\t\n\x05MOUSE\x10\x01\x12\n\n\x06WEBCAM\x10\x02\x12\x0b\n\x07MONITOR\x10\x03\"\x07\n\x05\x45mpty\"1\n\x10location_eventMessageList\x12\x1d\n\x06location_events\x18\x01 \x03(\x0b\x32\r.location_eventMessage2X\n\x0clocation_eventService\x12&\n\x06\x43reate\x12\r.location_eventMessage\x1a\r.location_eventMessage\x12 \n\x03Get\x12\x06.Empty\x1a\x11.location_eventMessageListb\x06proto3'
+  serialized_pb=b'\n\x0blocation_event.proto\"\x94\x02\n\x0clLocationEventMessage\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncreated_by\x18\x02 \x01(\t\x12$\n\x06status\x18\x03 \x01(\x0e\x32\x14.LocationEventMessage.Status\x12\x12\n\ncreated_at\x18\x04 \x01(\t\x12*\n\tequipment\x18\x05 \x03(\x0e\x32\x17.LocationEventMessage.Equipment\"?\n\x06Status\x12\n\n\x06QUEUED\x10\x00\x12\x0e\n\nPROCESSING\x10\x01\x12\r\n\tCOMPLETED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\"=\n\tEquipment\x12\x0c\n\x08KEYBOARD\x10\x00\x12\t\n\x05MOUSE\x10\x01\x12\n\n\x06WEBCAM\x10\x02\x12\x0b\n\x07MONITOR\x10\x03\"\x07\n\x05\x45mpty\"1\n\x10location_eventMessageList\x12\x1d\n\x06location_events\x18\x01 \x03(\x0b\x32\r.location_eventMessage2X\n\x0clocation_eventService\x12&\n\x06\x43reate\x12\r.location_eventMessage\x1a\r.location_eventMessage\x12 \n\x03Get\x12\x06.Empty\x1a\x11.location_eventMessageListb\x06proto3'
 )
 
 _location_eventMESSAGE = _descriptor.Descriptor(
@@ -67,7 +67,7 @@ _location_eventMESSAGE = _descriptor.Descriptor(
 DESCRIPTOR.message_types_by_name['LocationEventMessage'] = _location_eventMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-location_eventMessage = _reflection.GeneratedProtocolMessageType('location_eventMessage', (_message.Message,), {
+location_eventMessage = _reflection.GeneratedProtocolMessageType('LocationEventMessage', (_message.Message,), {
   'DESCRIPTOR' : _location_eventMESSAGE,
   '__module__' : 'location_event_pb2'
   # @@protoc_insertion_point(class_scope:location_eventMessage)
@@ -86,7 +86,7 @@ __ITEMSERVICE = _descriptor.ServiceDescriptor(
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
-    full_name='location_eventSERVICE.Create',
+    full_name='ItemService.Create',
     index=0,
     containing_service=None,
     input_type=_location_eventMESSAGE,
