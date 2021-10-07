@@ -6,10 +6,9 @@ metadata:
   name: location-consumer-api
 spec:
   ports:
-  - name: "5000"
-    port: 5000
-    targetPort: 5000
-    nodePort: 30004
+  - name: "9092"
+    port: 9092
+    targetPort: 9092
   selector:
     service: location-consumer-api
   type: NodePort
