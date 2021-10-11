@@ -11,9 +11,10 @@ import json
 
 kafka_url = os.environ["KAFKA_URL"]
 kafka_topic = os.environ["KAFKA_TOPIC"]
-producer = KafkaProducer(bootstrap_servers=kafka_url)
 logging.info('connecting to kafka ', kafka_url)
 logging.info('connecting to kafka topic ', kafka_topic)
+producer = KafkaProducer(bootstrap_servers=kafka_url)
+
 
 class LocationEventService(location_event_pb2_grpc.LocationEventService):
     
