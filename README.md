@@ -82,18 +82,7 @@ Type `exit` to exit the virtual OS and you will find yourself back in your compu
 Afterwards, you can test that `kubectl` works by running a command like `kubectl describe services`. It should not return any errors.
 
 ### Steps  
-### Setup Kafka enviroment, create a Topic, load a Consumer and troubleshooting with write a message  
-Download Kafka from [here](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.0.0/kafka_2.13-3.0.0.tgz)  
-```
-tar -xzf kafka_2.13-3.0.0.tgz
-cd kafka_2.13-3.0.0
-bin/zookeeper-server-start.sh config/zookeeper.properties
-bin/kafka-server-start.sh config/server.properties
-bin/kafka-topics.sh --create --topic items --partitions 1 --bootstrap-server localhost:9092 --replication-factor 1
-bin/kafka-console-consumer.sh --topic test --from-beginning --bootstrap-server localhost:9092
-bin/kafka-console-producer.sh --topic test --bootstrap-server localhost:9092
-```    
-### Deploy Kafka on k3s with helm  
+#### Deploy Kafka on k3s with helm  
 ```
 brew install helm
 helm repo add bitnami https://charts.bitnami.com/bitnami
