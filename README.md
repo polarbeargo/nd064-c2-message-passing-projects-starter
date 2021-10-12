@@ -136,15 +136,15 @@ To create a pod that you can use as a Kafka client run the following commands:
             --topic test \
             --from-beginning
 ```
-There are five microservice is located under the modules folder. Deploying each microservice in the following flow:  
+There are five microservices located under the modules folder. Deploying each microservice in the following flow:  
 Note: The first time you run this project, you will need to seed the database with dummy data. Use the command `sh scripts/run_db_command.sh <POD_NAME>` against the `postgres` pod. (`kubectl get pods` will give you the `POD_NAME`). Subsequent runs of `kubectl apply` for making changes to deployments or services shouldn't require you to seed the database again!  
 ### PERSON MICROSERVICE  
-1. In the `person ervice` folder and run `$ kubectl apply -f deployment/`
+1. In the `person ervice` folder, run `$ kubectl apply -f deployment/`
 2. When the pods status are running, run the script located in person service/scripts/run_db_command.sh with the pod identifier sh /scripts/run_db_command.sh <POD_NAME> The pod name will be something like (postgres-person-xxxxx-pod))
 Access the http://localhost:30001/ for testing.    
 
 ### CONNECTION MICROSERVICE
-1. In the `connection service` folder and run `$ kubectl apply -f deployment/`
+1. In the `connection service` folder, run `$ kubectl apply -f deployment/`
 2. As the pods status are running, execute the script in the connection service/scripts/run_db_command.sh with the pod identifier sh /connection service/scripts/run_db_command.sh <POD_NAME>. The pod name will be something like (postgres-connections-xxxxx-pod)) 
 3. Access the http://localhost:30002/ for testing.  
 
