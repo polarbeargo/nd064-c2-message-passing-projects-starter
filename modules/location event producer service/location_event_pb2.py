@@ -74,9 +74,9 @@ location_eventMessage = _reflection.GeneratedProtocolMessageType('LocationEventM
   })
 _sym_db.RegisterMessage(location_eventMessage)
 
-__ITEMSERVICE = _descriptor.ServiceDescriptor(
-  name='ItemService',
-  full_name='ItemService',
+__LOCATIONEVENTSERVICE = _descriptor.ServiceDescriptor(
+  name='location_eventService',
+  full_name='location_eventService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
@@ -86,7 +86,7 @@ __ITEMSERVICE = _descriptor.ServiceDescriptor(
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
-    full_name='ItemService.Create',
+    full_name='location_eventService.Create',
     index=0,
     containing_service=None,
     input_type=_location_eventMESSAGE,
@@ -95,8 +95,8 @@ __ITEMSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(__ITEMSERVICE)
+_sym_db.RegisterServiceDescriptor(__LOCATIONEVENTSERVICE)
 
-DESCRIPTOR.services_by_name['ItemService'] = __ITEMSERVICE
+DESCRIPTOR.services_by_name['location_eventService'] = __LOCATIONEVENTSERVICE
 
 # @@protoc_insertion_point(module_scope)
