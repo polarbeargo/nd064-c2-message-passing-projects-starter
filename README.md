@@ -82,18 +82,7 @@ Type `exit` to exit the virtual OS and you will find yourself back in your compu
 Afterwards, you can test that `kubectl` works by running a command like `kubectl describe services`. It should not return any errors.
 
 ### Steps  
-### Setup Kafka enviroment, create a Topic, load a Consumer and troubleshooting with write a message  
-Download Kafka from [here](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.0.0/kafka_2.13-3.0.0.tgz)  
-```
-tar -xzf kafka_2.13-3.0.0.tgz
-cd kafka_2.13-3.0.0
-bin/zookeeper-server-start.sh config/zookeeper.properties
-bin/kafka-server-start.sh config/server.properties
-bin/kafka-topics.sh --create --topic items --partitions 1 --bootstrap-server localhost:9092 --replication-factor 1
-bin/kafka-console-consumer.sh --topic test --from-beginning --bootstrap-server localhost:9092
-bin/kafka-console-producer.sh --topic test --bootstrap-server localhost:9092
-```    
-### Deploy Kafka on k3s with helm  
+#### Deploy Kafka on k3s with helm  
 ```
 brew install helm
 helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -136,24 +125,24 @@ To create a pod that you can use as a Kafka client run the following commands:
             --topic test \
             --from-beginning
 ```
-There are five microservice is located under the modules folder. Deploying each microservice in the following flow:  
+There are five microservices located under the modules folder. Deploying each microservice in the following flow:  
 Note: The first time you run this project, you will need to seed the database with dummy data. Use the command `sh scripts/run_db_command.sh <POD_NAME>` against the `postgres` pod. (`kubectl get pods` will give you the `POD_NAME`). Subsequent runs of `kubectl apply` for making changes to deployments or services shouldn't require you to seed the database again!  
-### PERSON MICROSERVICE  
-1. In the `person ervice` folder and run `$ kubectl apply -f deployment/`
+#### Person microservice  
+1. In the `person ervice` folder, run `$ kubectl apply -f deployment/`
 2. When the pods status are running, run the script located in person service/scripts/run_db_command.sh with the pod identifier sh /scripts/run_db_command.sh <POD_NAME> The pod name will be something like (postgres-person-xxxxx-pod))
 Access the http://localhost:30001/ for testing.    
 
-### CONNECTION MICROSERVICE
-1. In the `connection service` folder and run `$ kubectl apply -f deployment/`
+#### Connection microservice
+1. In the `connection service` folder, run `$ kubectl apply -f deployment/`
 2. As the pods status are running, execute the script in the connection service/scripts/run_db_command.sh with the pod identifier sh /connection service/scripts/run_db_command.sh <POD_NAME>. The pod name will be something like (postgres-connections-xxxxx-pod)) 
 3. Access the http://localhost:30002/ for testing.  
 
-### LOCATION EVENT PRODUCER MICROSERVICE
+#### Location event producer microservice
 * In the `location event producer microservice` folder, run `$ kubectl apply -f deployment/`  
 
-### LOCATION CONSUMER MICROSERVICE  
+#### Location consumer microservice  
 * In the `location consumer service` folder, run `$ kubectl apply -f deployment/`  
-### FRONTEND
+#### Frontend microservice
 * In the `frontend` folder, run `$ kubectl apply -f deployment/`  
 * When every pod's status are running then access the http://localhost:30000/ You will see the following image.   
 ![][image2]
