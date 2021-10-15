@@ -3,7 +3,6 @@
 [//]: # (Image References)
 
 [image1]: ./docs/architecture_design.png
-[image2]: ./docs/frontend.png
 
 ## Overview
 ### Background
@@ -144,9 +143,7 @@ Access the http://localhost:30001/ for testing.
 * In the `location consumer service` folder, run `$ kubectl apply -f deployment/`  
 #### Frontend microservice
 * In the `frontend` folder, run `$ kubectl apply -f deployment/`  
-* When every pod's status are running then access the http://localhost:30000/ You will see the following image.   
-![][image2]
-
+* When every pod's status are running then access the http://localhost:30000/  
 ### Verifying it Works
 Once the project is up and running, you should be able to see 3 deployments and 3 services in Kubernetes:
 `kubectl get pods` and `kubectl get services` - should both return `udaconnect-app`, `udaconnect-api`, and `postgres`
