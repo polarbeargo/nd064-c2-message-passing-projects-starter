@@ -149,9 +149,10 @@ Once the project is up and running, you should be able to see 3 deployments and 
 `kubectl get pods` and `kubectl get services` - should both return `udaconnect-app`, `udaconnect-api`, and `postgres`
 
 
-These pages should also load on your web browser:
-* `http://localhost:30001/` - OpenAPI Documentation
-* `http://localhost:30001/api/` - Base path for API
+These pages should also load on your web browser:  
+OpenAPI Documentation  
+* `http://localhost:30001/` - Person service API
+* `http://localhost:30002/` - Connection service API
 * `http://localhost:30000/` - Frontend ReactJS Application
 
 #### Deployment Note
